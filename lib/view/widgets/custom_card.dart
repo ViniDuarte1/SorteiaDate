@@ -21,7 +21,7 @@ class CustomCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(8),
         boxShadow: [
           BoxShadow(
-            color: Colors.grey.withOpacity(0.2),
+            color: Colors.red.withOpacity(0.2),
             spreadRadius: 0.5,
             blurRadius: 2.0,
             offset: const Offset(2.0, 4.0),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sorteiadate/model/screen_arguments.dart';
 
 import 'package:sqflite/sqflite.dart';
 import 'package:sorteiadate/view/widgets/custom_card.dart';
@@ -72,7 +73,7 @@ class _OptionsScreenState extends State<OptionsScreen> {
                       title: displayName,
                       description: 'Opções de sorteio de $displayName',
                       onTap: () {
-                        Navigator.of(context).pushReplacementNamed('/add', arguments: tableName);
+                        Navigator.of(context).pushReplacementNamed('/add', arguments: ScreenArguments( tableName, displayName));
                       },
                     ),
                   );

@@ -113,7 +113,7 @@ class DatabaseHelper {
     }
   }
 
-   static Future<void> insertTestData() async {
+  static Future<void> insertTestData() async {
     Database db = await database;
     try {
       // Verificar se há dados na tabela clima
@@ -185,5 +185,19 @@ class DatabaseHelper {
       return randomItem.first;
     }
     return null;
+  }
+
+  static Future<void> deleteData(String tableName, int id) async {
+    Database db = await database;
+    try {
+      await db.delete(
+        tableName,
+        where: 'id = ?',
+        whereArgs: [id],
+      );
+    } catch (ex) {
+      print("Erro ao deletar dados: $ex");
+      rethrow;
+    }
   }
 }
